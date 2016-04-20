@@ -1,6 +1,6 @@
 class SessionController < ApplicationController
   skip_before_action :authorize
-  
+
   def new
   end
 
@@ -16,6 +16,6 @@ class SessionController < ApplicationController
 
   def destroy
     session[:user_id] = nil
-    redirect_to store_url
+    redirect_to root_url
   end
 end

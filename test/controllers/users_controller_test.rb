@@ -1,6 +1,8 @@
 require 'test_helper'
 
 class UsersControllerTest < ActionController::TestCase
+  fixtures :users
+
   setup do
     @user = users(:one)
   end
@@ -9,11 +11,6 @@ class UsersControllerTest < ActionController::TestCase
     get :index
     assert_response :success
     assert_not_nil assigns(:users)
-  end
-
-  test "should get new" do
-    get :new
-    assert_response :success
   end
 
   test "should create user" do

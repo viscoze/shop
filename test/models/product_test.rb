@@ -12,7 +12,7 @@ class ProductTest < ActiveSupport::TestCase
     assert product.errors[:image_url].any?
   end
 
-  test "products' price should be positive" do
+  test "products price should be positive" do
     product = Product.new title: "Lorem", description: "Lorem", image_url: "lorem.jpg"
 
     product.price = -1
@@ -28,7 +28,7 @@ class ProductTest < ActiveSupport::TestCase
   end
 
   test "product is not valid without a unique title" do
-    product = Product.new products(:one).title, description: "Lorem",
+    product = Product.new title: products(:one).title, description: "Lorem",
                           image_url: "image.jpg", price: 0.99
 
     assert product.invalid?
