@@ -5,7 +5,7 @@
 <% cache ['store', Product.latest] do %>
   <% @products.each do |product| %>
     <% cache ['entry', product] do %>
-      <div class="col-sm-2">
+      <div class="col-sm-3">
         <div class="panel panel-primary">
           <div class="panel-heading"><%= product.title %></div>
           <div class="panel-body"><%= image_tag product.image_url, class: "img-responsive" %></div>
